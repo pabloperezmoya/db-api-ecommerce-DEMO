@@ -1,0 +1,4 @@
+.aws/
+venv/
+__pycache__
+.vscode

@@ -85,9 +85,12 @@ class API(Resource):
 
 api.add_resource(API, '/api/v1/')
 
-@app.route('/')
-def verify_status():
-    return jsonify({'status': 'All online'})
+@app.route('/<token>')
+def verify_status(token):
+    if token == 'test-token':
+        return jsonify({'status': 'All online'})
+    else:
+        return jsonify({'status': 'Token needed'})
 
 
 if __name__ == '__main__':
